@@ -3,14 +3,16 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
 const btnEl = document.querySelector(".change-color");
 const bodyColor = document.querySelector("body");
 const spanColor = document.querySelector(".color");
 
 const onBtnClick = () => {
-  bodyColor.style.backgroundColor = getRandomHexColor();
-  const newColor = getRandomHexColor();
-  spanColor.textContent = newColor;
+  const newColor = getRandomHexColor(); //  один раз створили
+
+  bodyColor.style.backgroundColor = newColor; // використали
+  spanColor.textContent = newColor; // використали
 };
 
 btnEl.addEventListener("click", onBtnClick);
